@@ -119,7 +119,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>org.thebreak.roombooking.app.main</mainClass>
+                            <mainClass>org.thebreak.roombooking.app</mainClass>
                         </manifest>
                     </archive>
 
