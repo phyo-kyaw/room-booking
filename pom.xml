@@ -15,7 +15,7 @@
         <module>roombooking-payment</module>
         <module>roombooking-dictionary</module>
         <module>gateway</module>
-        <module>roombooking-eureka</module>
+<!--        <module>roombooking-eureka</module>-->
 
     </modules>
 
@@ -96,8 +96,46 @@
                 <version>3.12.0</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <type>maven-plugin</type>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.thebreak.roombooking.app.main</mainClass>
+                        </manifest>
+                    </archive>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
