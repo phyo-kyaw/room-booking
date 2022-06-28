@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="roombooking-app" />
-        <module name="roombooking-email" />
         <module name="roombooking-payment" />
         <module name="gateway" />
         <module name="roombooking-dictionary" />
@@ -16,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="roombooking-email" target="8" />
       <module name="roombooking-eureka" target="8" />
     </bytecodeTargetLevel>
   </component>
