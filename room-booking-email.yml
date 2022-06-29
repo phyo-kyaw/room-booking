@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: roombooking-app
+  name: roombooking-email
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: roombooking-app
+      app: roombooking-email
   template:
     metadata:
       labels:
-        app: roombooking-app
+        app: roombooking-email
     spec:
       containers:
-        - name: roombooking-app
-          image: pkdocker3383/room-booking-api:v1
+        - name: roombooking-email
+          image: pkdocker3383/room-booking-email-api:v1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
+            - containerPort: 8085
           #env:
             #- name: PORT
               #value: "8080"
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: roombooking-app
+  name: roombooking-email
   labels:
-    app: roombooking-app
+    app: roombooking-email
 spec:
   ports:
     - port: 80
-      targetPort: 8081
+      targetPort: 8085
   selector:
-    app: roombooking-app
+    app: roombooking-email
