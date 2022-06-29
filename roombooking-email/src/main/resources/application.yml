@@ -4,17 +4,17 @@ nmserver:
 spring:
   application:
     name: roombooking-email
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        register: true
-        instance-id: ${spring.application.name}-01
-        service-name: ${spring.application.name}
-        port: ${server.port}
-        prefer-ip-address: true
-        ip-address: ${spring.cloud.client.ip-address}
+#  cloud:
+#    consul:
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        register: true
+#        instance-id: ${spring.application.name}-01
+#        service-name: ${spring.application.name}
+#        port: ${server.port}
+#        prefer-ip-address: true
+#        ip-address: ${spring.cloud.client.ip-address}
 
   #  zipkin:
 #    sender:
@@ -26,8 +26,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: 
-    password: 
+    username: break.booking.2021@gmail.com
+    password: Br36kB00k!ng
     properties:
       mail:
         smtp:

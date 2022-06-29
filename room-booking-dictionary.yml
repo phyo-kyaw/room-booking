@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: room-booking-dictionary-api
+  name: roombooking-dictionary
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: room-booking-dictionary-api
+      app: roombooking-dictionary
   template:
     metadata:
       labels:
-        app: room-booking-dictionary-api
+        app: roombooking-dictionary
     spec:
       containers:
-        - name: room-booking-dictionary-api
+        - name: roombooking-dictionary
           image: pkdocker3383/room-booking-dictionary-api:v1
           imagePullPolicy: Always
           ports:
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: room-booking-dictionary-api
+  name: roombooking-dictionary
   labels:
-    app: room-booking-dictionary-api
+    app: roombooking-dictionary
 spec:
   ports:
     - port: 80
       targetPort: 8086
   selector:
-    app: room-booking-dictionary-api
+    app: roombooking-dictionary

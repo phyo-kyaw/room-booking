@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: room-booking-payment-api
+  name: roombooking-payment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: room-booking-payment-api
+      app: roombooking-payment
   template:
     metadata:
       labels:
-        app: room-booking-payment-api
+        app: roombooking-payment
     spec:
       containers:
-        - name: room-booking-payment-api
+        - name: roombooking-payment
           image: pkdocker3383/room-booking-payment-api:v1
           imagePullPolicy: Always
           ports:
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: room-booking-payment-api
+  name: roombooking-payment
   labels:
-    app: room-booking-payment-api
+    app: roombooking-payment
 spec:
   ports:
     - port: 80
       targetPort: 8084
   selector:
-    app: room-booking-payment-api
+    app: roombooking-payment
