@@ -9,12 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="roombooking-app" />
         <module name="roombooking-payment" />
-        <module name="gateway" />
         <module name="roombooking-dictionary" />
         <module name="roombooking-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gateway" target="1.8" />
       <module name="roombooking-email" target="8" />
       <module name="roombooking-eureka" target="8" />
     </bytecodeTargetLevel>
