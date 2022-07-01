@@ -7,7 +7,7 @@ import org.thebreak.roombooking.common.model.BookingNotificationEmailBO;
 import org.thebreak.roombooking.common.model.BookingReminderEmailBO;
 import org.thebreak.roombooking.common.model.EmailBO;
 
-@FeignClient(value = "roombooking-email/api/v1/email/")
+//@FeignClient(value = "roombooking-email/api/v1/email/")
 public interface EmailFeign {
 
     @PostMapping("sendBookingNotification")

@@ -45,8 +45,8 @@ import java.util.Optional;
 @Slf4j
 public class BookingServiceImpl implements BookingService {
 
-    @Autowired
-    private EmailFeign emailFeign;
+    //@Autowired
+    //priate EmailFeign emailFeign;
     private final BookingRepository repository;
 
     private final RoomRepository roomRepository;
@@ -202,7 +202,7 @@ public class BookingServiceImpl implements BookingService {
         String formatedTime = startTime.format(dateTimeFormatter);
         String formatedAmout = PriceUtils.formatDollarString(totalAmount);
         BookingNotificationEmailBO emailBO = new BookingNotificationEmailBO(toEmail,userName,roomTitle, totalBookedHours, formatedTime, formatedAmout);
-        emailFeign.sendBookingNotification(emailBO);
+        //emailFeign.sendBookingNotification(emailBO);
     }
 
     private void checkBookingBoEmptyOrNull(BookingBO bookingBO) {
