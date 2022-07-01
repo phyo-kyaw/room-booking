@@ -22,8 +22,8 @@ public class BookingEmailReminder {
     BookingService bookingService;
     @Autowired
     BookingRepository bookingRepository;
-    @Autowired
-    EmailFeign emailFeign;
+    //@Autowired
+    //EmailFeign emailFeign;
 
     @Scheduled(cron = "15 1/1 * * * ?")
     public void checkAndCloseBooking() {
@@ -49,7 +49,7 @@ public class BookingEmailReminder {
                             booking.getContact().getName(),
                             booking.getRoom().getTitle(),booking.getTotalHours(),
                             formatedTime);
-                    emailFeign.sendReminderEmail(emailBO);
+                    //emailFeign.sendReminderEmail(emailBO);
                     System.out.println("bookedTime " + bookedTime.getStart().getDayOfYear() + ":" + bookedTime.getStart());
                 }
             }
