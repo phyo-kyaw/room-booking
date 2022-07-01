@@ -35,8 +35,8 @@ public class BookingController {
     @Autowired
     private BookingService bookingService;
 
-    @Autowired
-    private EmailFeign emailFeign;
+    //@Autowired
+    //private EmailFeign emailFeign;
 
     @PostMapping(value = "/add")
     @Operation(summary = "Add a new booking",
